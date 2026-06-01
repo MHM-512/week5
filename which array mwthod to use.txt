@@ -1,0 +1,165 @@
+اضافه آخر			push
+حذف آخر			pop
+اضافه اول			unshift
+حذف اول			shift
+تبدیل عناصر		map
+فیلتر کردن			filter
+پیدا کردن عنصر		find
+پیدا کردن اندیس		findIndex
+بررسی وجود شرط		some
+بررسی همه عناصر		every
+بررسی وجود مقدار		includes
+جمع/تجمیع		reduce
+ساخت رشته		join
+فقط حلقه			forEach
+برش آرایه			slice
+ادغام آرایه‌ها		concat
+صاف کردن آرایه تو در تو	flat
+
+map :
+const nums = [1, 2, 3];
+
+const result = nums.map(n => n * 2);
+
+// [2,4,6]
+
+
+filter :
+const nums = [1,2,3,4];
+
+const result = nums.filter(n => n > 2);
+
+// [3,4]
+
+slice :
+const arr = [1,2,3,4];
+
+arr.slice(1,3);
+
+// [2,3]
+
+concat:
+[1,2].concat([3,4]);
+
+// [1,2,3,4]
+
+flat:
+[1,[2,[3]]].flat(2);
+
+// [1,2,3]
+
+
+flatMa:
+['a b', 'c d']
+.flatMap(x => x.split(' '));
+
+// ['a','b','c','d']
+
+
+----ES2023
+toReversed()
+toSorted()
+toSpliced()
+with()
+
+const arr = [1,2,3];
+
+const result = arr.toReversed();
+
+// [3,2,1]
+
+Index : پیدا کردن اندیس
+const arr = ['a','b','c'];
+
+arr.indexOf('b');
+
+// 1
+
+findIndex : بر اساس شرط
+const users = [
+  {age:20},
+  {age:30}
+];
+
+users.findIndex(u => u.age === 30);
+
+// 1
+
+findLastIndex: از انتهای آرایه جستجو می‌کند.
+arr.findLastIndex(...)
+
+find: پیدا کردن عنصر
+const dogs = [
+  {breed:'A', age:2},
+  {breed:'B', age:5}
+];
+
+dogs.find(d => d.age > 3);
+
+// {breed:'B', age:5}
+
+findLast : arr.findLast(...)
+
+at : دسترسی با شماره موقعیت
+const arr = ['a','b','c'];
+
+arr.at(-1);
+
+// 'c'
+
+includes : بررسی وجود مقدار
+const arr = ['sleeping','agility'];
+
+arr.includes('agility');
+
+// true
+
+some : حداقل یک عنصر شرط را داشته باشد
+const dogs = [
+  {activities:['sleeping']},
+  {activities:['agility']}
+];
+
+dogs.some(
+ dog => dog.activities.includes('agility')
+);
+
+// true
+
+every :همه عناصر باید شرط را داشته باشند
+const nums = [2,4,6];
+
+nums.every(n => n % 2 === 0);
+
+// true
+
+join : تبدیل آرایه به رشته
+const arr = ['محمد','علی'];
+
+arr.join('-');
+
+// محمد-علی
+
+reduce : تبدیل آرایه به یک مقدار
+const nums = [1,2,3,4];
+
+const sum = nums.reduce(
+ (acc, curr) => acc + curr,
+ 0
+);
+
+// 10
+ساخت یک ابجکت :
+const words = ['a','b','c'];
+
+const obj = words.reduce((acc,w) => {
+  acc[w] = true;
+  return acc;
+}, {});
+
+forEach : وقتی فقط می‌خواهی روی آرایه حرکت کنی.
+const arr = [1,2,3];
+
+arr.forEach(item => {
+  console.log(item);
+});
